@@ -38,6 +38,11 @@ public class CompressionFactory {
                 .findFirst().orElseThrow();
     }
 
+    static ArchiverProvider getArchiverProvider() {
+        return ServiceLoader.load(ArchiverProvider.class)
+                .findFirst().orElseThrow();
+    }
+
 
     private CompressionFactory() {
         super();
@@ -55,6 +60,10 @@ public class CompressionFactory {
     }
 
     public static FileInfoRetriever fileInfo(Path path) {
-        return getFileInfoRetrieverProvider().getFileInfoRetriever();
+        return getFileInfoRetrieverProvider().getFileInfoRetriever(path);
+    }
+
+    public static Archiver archiver() {
+        return getArchiverProvider().getArchiver();
     }
 }

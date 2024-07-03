@@ -14,18 +14,11 @@
  *
  */
 
+package be.yildizgames.module.compression;
+
 /**
- * Module to compress and decompress files.
- *
  * @author Grégory Van den Borre
  */
-open module be.yildizgames.module.compression {
-
-    uses be.yildizgames.module.compression.FileInfoRetrieverProvider;
-    uses be.yildizgames.module.compression.ArchiverProvider;
-
-    requires be.yildizgames.common.hashing;
-    requires be.yildizgames.common.types;
-
-    exports be.yildizgames.module.compression;
+public interface ArchiverProvider {
+    Archiver getArchiver();
 }

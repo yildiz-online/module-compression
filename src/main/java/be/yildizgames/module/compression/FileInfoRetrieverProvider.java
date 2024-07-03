@@ -16,10 +16,12 @@
 
 package be.yildizgames.module.compression;
 
+import java.nio.file.Path;
+
 /**
  * @author Grégory Van den Borre
  */
 public interface FileInfoRetrieverProvider {
 
-    FileInfoRetriever getFileInfoRetriever();
+    FileInfoRetriever getFileInfoRetriever(Path archive);
 }

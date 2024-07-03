@@ -24,6 +24,10 @@ import java.util.List;
  */
 public interface Archiver {
 
+    void unpack(Path archive, String fileName, Path destinationDirectory);
+
+    void unpack(Path archive, Path destinationDirectory);
+
     /**
      * Compress a file.
      * @param file File to compress, can be directory.
